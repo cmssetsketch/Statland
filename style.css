@@ -165,8 +165,7 @@ border: 1px solid #fff;
   position: fixed;
  top: 10%;               /* halfway down container */
   right: 30px;             /* keep horizontal position */
-  min-width: 80px;
-  max-width: 20vw;
+  width: clamp(200px, 15vw, 300px);
   max-height: 90vh;
   overflow-y: auto;
 border: 1px solid white;
