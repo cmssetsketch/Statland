@@ -181,11 +181,6 @@ const c = p.createCanvas(container.clientWidth, container.clientHeight);
   // Retina support
   p.pixelDensity(Math.min(2, window.devicePixelRatio || 1));
 
-  // Resize canvas on window/viewport resize
-  window.addEventListener("resize", resizeMapContainer);
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", resizeMapContainer);
-  }
  // Inject SVG FIRST
     await injectSvgFromUrl("./MigMappFinalN.svg");
    resizeMapContainer();
