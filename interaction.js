@@ -601,19 +601,20 @@ document.querySelectorAll(".zoom-btn").forEach(btn => {
     tapStart = null;
   });
   
-    document.addEventListener("pointerdown", (e) => {
+  document.addEventListener("pointerdown", (e) => {
   const popUp = document.getElementById("popUp");
 
-  // if click/tap is outside the map AND outside the popup
+  // Ignore clicks inside the map, the popup, or your toggle buttons
   if (
     !mapContainer.contains(e.target) &&
-    !popUp.contains(e.target)
+    !popUp.contains(e.target) &&
+    e.target !== everybodyBtn &&
+    e.target !== migrantBtn
   ) {
     selectedButton = null;
     popUp.style.display = "none";
   }
 });
-  
 }
 
 // ---------------- ZOOM FUNCTIONS ----------------
