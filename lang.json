@@ -3,24 +3,19 @@
     "legend": {
       "including" : "including",
       "migrant": "% of migrants",
-      "mainly coming from:": "mainly coming from :",
+      "mainly coming from:": "mainly coming from :", 
+      "billion" : "billion",
+      "million" : "million",
       "coming from:": "from :",
       "migbutton" : "Migrants details",
       "everybody" : "Global population",
       "noData" : "No data."
     },
     "popInfo": {
-      "statland": "Welcome to Statland",
-"warning": "A visual story based on the International Migrant Stock 2024 dataset <br> and the World Population Prospects 2024 by the United Nations.",
-"geography": "Statland is pretty similar to Earth,<br> but here contrast mesures distance, <br> colors indicate regions, <br> and shapes the territories within them.",
-      "region":"Colors indicate regions. <br> Shapes distinguish the territories within them.",
-"particles": "Here, humans are particles.<br> They drift. They wander. They change.",
-"motif": "When particles gather, they form patterns.<br> If a pattern fills a territory,<br><strong> they call it a population.</strong>",
-"population": "If a pattern fills a territory,<br> they call it a population.",
-"decision": "When a particle joins a pattern,<br><strong>  the territory decides which shape it will take.</strong> ",
-"criteres": "Some look at where it was born, <br> others examine its trajectory,<br> others still, just register it's presence.<br> When none of this is clear, some simply estimate.",
-"migrant": "After this process, <br> particles that differ from their neighbors <br> <strong>are called migrants.</strong>",
-"disclaimer": "A visual story based on the<em>  International Migrant Stock 2024</em> <br> and the<em> World Population Prospects 2024 </em>datasets by the United Nations."
+      "statland": "Welcome",
+"warning": "Migration is an interactive project based on the United Nations's data on global migration.Like any map, it does not show the world as it is, but how it is counted and organized.<br><br>In this neatly ordered system, a migrant appears as a disturbance in the local pattern. The more distant their origin is considered to be, the less they seem to blend into the pattern.<br><br>Each territory decides who counts as one of its own. In some places, belonging is inherited and passed on. In others, the border itself draws the pattern, whoever is born within it belongs. According to these rules, one is counted as inside or outside, similar or different.",
+
+"disclaimer": "data : <em>International migrant stock 2024</em> and <em>World Population Prospects 2024</em> datasets."
 
     },
     
@@ -325,23 +320,17 @@
       "including" : "dont",
       "migrant": "% de migrants",
       "mainly coming from:": "principalement venant de :",
+      "billion" : "milliard",
+      "million" : "million",
       "coming from:": "venant de :",
       "migbutton" : "Migrants seulement",
       "everybody" : "Population globale",
       "noData" : "Pas de données"
     },
     "popInfo": {
-      "statland":"Bienvenue dans Statland",
-      "warning": "Une histoire basée sur les jeux de données <em>International migrant stock 2024</em> <br> et<em> World Population Prospects 2024 </em> des Nations Unies.",
-      "region":"Les couleurs indiquent les régions.<br> Les formes distinguent les territoires qui les compose.",
-      "geography": "Sur Statland la géographie est simple<br> Les couleurs indiquent les régions,<br> et les formes les territoires qui les compose.",
-      "particles": "Ici, les humains sont des particules.<br> Elles dérivent. Elles vagabondent. Elles changent.",
-      "motif": "Quand les particules se regroupent,<br> elles composent des motifs.<br>Et si un motif se forme à l'intérieur d'un territoire,<br> <strong>ils appellent ça une population.</strong>",
-      "population": "Quand un motif rempli un territoire,<br> ils appellent ça une population.",
-      "decision": "Lorsqu’une particule rejoint un motif,<br><strong>c'est le territoire qui décide de la forme qu’elle va prendre.</strong>",
-      "criteres": "Certains regardent où elle est née, <br> d’autres examinent ses papiers,<br> d’autres encore, enregistent seulement sa présence.<br> Quand rien de tout cela n’est clair, <br>certains font juste des estimations.",
-      "migrant":"Après ce processus, <br> les particules qui diffèrent de leurs voisines <br> <strong>sont appelées migrantes.</strong>",
-"disclaimer": " Une histoire visuelle basée sur les jeux de données <em>International migrant stock 2024</em> <br> et<em> World Population Prospects 2024 </em> des Nations Unies."
+      "warning": "Migration est une œuvre interactive crée à partir des chiffres des Nations Unies sur la migration dans le monde. Comme toute carte, elle ne montre pas le monde tel qu’il est, mais comment il est compté et organisé. <br><br> Dans ce monde bien rangé, un migrant est une perturbation dans le motif du territoire ou il vit. Plus son origine est lointaine, plus il contraste avec ses voisins. <br><br> Chaque territoire decide comment il reconnait les siens. Pour certains, le motif est un héritage qui se transmet. Pour d’autres, c’est la frontiere qui délimite le motif, tout ceux qui naissent à l’intérieur en font partie. Selon ces critères, on est dedans ou dehors, semblable ou différent.",
+
+"disclaimer": "source : <em>International migrant stock 2024</em> et<em> World Population Prospects 2024."
     
     },
          "letters": {
