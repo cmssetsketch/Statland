@@ -124,7 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const topMargin = parseFloat(style.getPropertyValue("--top-margin")) || 20;
       const bottomMargin = parseFloat(style.getPropertyValue("--bottom-margin")) || 20;
       const toolbarHeight = toolbar.getBoundingClientRect().height || 40;
-      let availableHeight = (vh - topMargin - bottomMargin - toolbarHeight) * 0.9;
+      const isPortrait = window.innerHeight > window.innerWidth;
+      const heightFactor = isPortrait ? 0.98 : 0.9;
+      let availableHeight = (vh - topMargin - bottomMargin - toolbarHeight) * heightFactor;
       // availableHeight = Math.min(availableHeight, 1000);
 
       // set container height
@@ -148,14 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Original centering — just compute panX/panY
         // Original centering — just compute panX/panY
-        const scaleFactor = Math.min(
-          mapContainer.clientWidth / svgWidth,
-          mapContainer.clientHeight / svgHeight
-        );
+        // Logic requested: TAKE 100% HEIGHT ALWAYS.
+        const scaleFactor = mapContainer.clientHeight / svgHeight;
 
         // Initial auto-zoom to fit
         if (zoom === 1) {
-          zoom = scaleFactor * 0.95; // 95% fit
+          zoom = scaleFactor * 1.4; // 140% zoom
         }
 
         panX = (mapContainer.clientWidth - svgWidth * zoom) / 2;
@@ -597,22 +597,23 @@ function drawShapeOutline(p, s, color = 255) {
   if (s.type === "polygon") drawPolygon(p, s.el);
   else if (s.type === "rect") drawRect(p, s.el);
   else if (s.type === "path") {
-    const d = s.el.getAttribute("d");
-    if (!d) return;
-
-    const path = new Path2D(d);
+    if (!s.path) return;
     const ctx = p.drawingContext;
-    ctx.save(); // preserve p5 state
+    ctx.save();
 
     ctx.strokeStyle = typeof color === "number"
       ? `rgb(${color},${color},${color})`
       : color;
 
+    ctx.lineWidth = 0.5 / p.drawingContext.getTransform().a; // Adjust line width for zoom? No, p5 handles stroke weight usually, but we are using native ctx here.
+    // Wait, p5's strokeWeight(0.5) is set above.
+    // But we are using ctx.stroke(path).
+    // Let's stick to simple ctx usage but use the cached path.
+
     ctx.lineWidth = 0.5;
     ctx.fillStyle = "transparent";
 
-    ctx.stroke(path);
-
+    ctx.stroke(s.path);
     ctx.restore();
   }
 }
