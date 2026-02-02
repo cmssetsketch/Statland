@@ -99,6 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       document.getElementById("toggle-everybody").textContent = t("legend.everybody");
       document.getElementById("toggle-migrant").textContent = t("legend.migbutton");
+
+      // Update Intro/Info Modal Text
+      const wOne = document.getElementById("intro-warning");
+      const wTw = document.getElementById("intro-disclaimer");
+      if (wOne) wOne.innerHTML = t("popInfo.warning");
+      if (wTw) wTw.innerHTML = t("popInfo.disclaimer");
+
+      document.getElementById("toggle-migrant").textContent = t("legend.migbutton");
       // If a popup is open, refresh its content using the stored country
       if (popInfo.classList.contains("active")) {
         showPopInfo();
@@ -213,8 +221,48 @@ document.addEventListener("DOMContentLoaded", () => {
       p.noLoop(); // redraw only when needed
       p.redraw();
       container.style.visibility = "visible";
+      // await setupInteractions(p);
       await setupInteractions(p);
-      togglePopInfo(true);
+      // togglePopInfo(true); // Don't show info popup immediately
+
+      // Handle Intro
+      const intro = document.getElementById("introModal");
+      const enterBtn = document.getElementById("enter-btn");
+
+      // Hijack the Info Button to reopen Intro
+      const oldInfoBtn = document.getElementById("info-btn");
+      if (oldInfoBtn) {
+        const newInfoBtn = oldInfoBtn.cloneNode(true);
+        oldInfoBtn.parentNode.replaceChild(newInfoBtn, oldInfoBtn);
+        newInfoBtn.addEventListener("click", () => {
+          if (intro) {
+            intro.style.display = "flex";
+            // ensure text is up to date
+            const wOne = document.getElementById("intro-warning");
+            const wTw = document.getElementById("intro-disclaimer");
+            if (wOne) wOne.innerHTML = t("popInfo.warning");
+            if (wTw) wTw.innerHTML = t("popInfo.disclaimer");
+
+            requestAnimationFrame(() => intro.style.opacity = 1);
+          }
+        });
+      }
+
+      if (intro && enterBtn) {
+        // Init text once
+        const wOne = document.getElementById("intro-warning");
+        const wTw = document.getElementById("intro-disclaimer");
+        if (wOne) wOne.innerHTML = t("popInfo.warning");
+        if (wTw) wTw.innerHTML = t("popInfo.disclaimer");
+
+        enterBtn.addEventListener("click", () => {
+          intro.style.opacity = 0;
+          setTimeout(() => {
+            intro.style.display = "none";
+            // togglePopInfo(true); // Restore Sidebar/Popup -> DISABLED AS REQUESTED
+          }, 500);
+        });
+      }
 
       p.windowResized = () => {
         if (window.resizeMapContainer) window.resizeMapContainer();
