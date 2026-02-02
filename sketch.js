@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const topMargin = parseFloat(style.getPropertyValue("--top-margin")) || 20;
       const bottomMargin = parseFloat(style.getPropertyValue("--bottom-margin")) || 20;
       const toolbarHeight = toolbar.getBoundingClientRect().height || 40;
-      let availableHeight = vh - topMargin - bottomMargin - toolbarHeight;
+      let availableHeight = (vh - topMargin - bottomMargin - toolbarHeight) * 0.9;
       // availableHeight = Math.min(availableHeight, 1000);
 
       // set container height
@@ -147,6 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const svgHeight = svgEl.viewBox.baseVal.height;
 
         // Original centering — just compute panX/panY
+        // Original centering — just compute panX/panY
+        const scaleFactor = Math.min(
+          mapContainer.clientWidth / svgWidth,
+          mapContainer.clientHeight / svgHeight
+        );
+
+        // Initial auto-zoom to fit
+        if (zoom === 1) {
+          zoom = scaleFactor * 0.95; // 95% fit
+        }
+
         panX = (mapContainer.clientWidth - svgWidth * zoom) / 2;
         panY = (mapContainer.clientHeight - svgHeight * zoom) / 2;
 
