@@ -525,7 +525,7 @@ body {
 
 .intro-content h1 {
   font-family: var(--font-bold);
-  font-size: clamp(32px, 8vw, 70px);
+  font-size: clamp(28px, 8vw, 70px);
   /* Slightly smaller min */
   margin-bottom: 20px;
   letter-spacing: 4px;
@@ -567,7 +567,7 @@ body {
 .intro-logo {
   width: clamp(60px, 15vw, 80px);
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   flex-shrink: 0;
 }
 
