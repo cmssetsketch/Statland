@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       document.getElementById("toggle-everybody").textContent = t("legend.everybody");
       document.getElementById("toggle-migrant").textContent = t("legend.migbutton");
-
+document.getElementById("enter-btn").textContent = t("legend.enter-btn");
       // Update Intro/Info Modal Text
       const wOne = document.getElementById("intro-warning");
       const wTw = document.getElementById("intro-disclaimer");
