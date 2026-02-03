@@ -9,7 +9,8 @@
       "coming from:": "from :",
       "migbutton" : "Migrants details",
       "everybody" : "Global population",
-      "noData" : "No data."
+      "noData" : "No data.",
+      "entry-btn" : "Explore the map"
     },
     "popInfo": {
       "statland": "Welcome",
@@ -325,7 +326,8 @@
       "coming from:": "venant de :",
       "migbutton" : "Migrants seulement",
       "everybody" : "Population globale",
-      "noData" : "Pas de données"
+      "noData" : "Pas de données",
+      "entry-btn" : "Acceder à la carte"
     },
     "popInfo": {
       "warning": "Migration est une œuvre interactive crée à partir des chiffres des Nations Unies sur la migration dans le monde en 2024. Comme toute carte, elle ne montre pas le monde tel qu’il est, mais tel qu'il est compté et organisé. <br><br> Dans ce monde bien rangé, un migrant est une perturbation dans le motif du territoire ou il vit. Plus son origine est lointaine, plus il contraste avec ses voisins. <br><br> À l’exception des territoires ou cette information n’est pas disponible, ce jeu de donnée définit comme migrant toute personne née à l'étranger.",
