@@ -689,7 +689,7 @@ function showPopInfo() {
   }
 
 
-  addImg("popContact", "me-Icon-White.png", "contact-image", 0);
+  addImg("popContact", "logo-mssetWhite.png", "contact-image", 0);
 
 
 }
